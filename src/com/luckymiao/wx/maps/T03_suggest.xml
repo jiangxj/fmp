@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T03_suggest">
+   
+   <insert id="insertT03_suggest" parameterType="com.luckymiao.wx.dto.T03_suggest">
+   		insert into t03_suggest(sid,content,createdate) values(#{sid},#{content},#{createdate})
+   </insert>
+   
+</mapper>

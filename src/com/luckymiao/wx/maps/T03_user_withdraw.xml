@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T03_user_withdraw">
+   
+   <insert id="insertT03_user_withdraw" parameterType="com.luckymiao.wx.dto.T03_user_withdraw">
+   		insert into t03_user_withdraw(wid,uid,coin,status,createdate,balance,rmb) values(#{wid},#{uid},#{coin},#{status},#{createdate},#{balance},#{rmb})
+   </insert>
+   <select id="getT03_user_withdrawListByTelephone" parameterType="com.luckymiao.wx.dto.T03_user_withdraw" resultType="com.luckymiao.wx.dto.T03_user_withdraw">
+   		select t1.wid,t1.coin,t3.discname status,t1.createdate from t03_user_withdraw t1, t03_user t2, t00_dict t3 where t1.uid = t2.uid and t1.status = t3.disckey and t3.disctype = 'T0002' and t2.telephone = #{telephone} order by t1.createdate desc
+   </select>
+</mapper>

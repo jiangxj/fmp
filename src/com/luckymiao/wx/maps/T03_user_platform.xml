@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T03_user_platform">
+   
+   <insert id="insertT03_user_platform" parameterType="com.luckymiao.wx.dto.T03_user_platform">
+   		insert into t03_user_platform(id,uid,platformid,is_regist,createdate) values(#{id},#{uid},#{platformid},#{is_regist},#{createdate})
+   </insert>
+   
+</mapper>

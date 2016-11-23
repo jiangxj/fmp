@@ -1,0 +1,93 @@
+.login{
+	position: relative;
+	background-image: url(../img/lbg.png);
+	background-size: cover;
+	width: 100%;
+	height: 140px;
+	text-align: center;
+}
+.login img{
+	margin-top: 20px;
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	background-color: #F0F0F0;
+}
+.login p{
+	font-size: 16px;
+	color: darkgray;
+}
+.link_group{
+	margin-top: 10px;
+}
+.link_group .link_item:last-child{
+	border-bottom:1px solid gainsboro;
+}
+
+.link_item{
+	font-size: 16px;
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	border-top:1px solid gainsboro;
+}
+.link_item h4{
+	width: auto;
+	height: 20px;
+	color: #5C6163;
+	float: left;
+	padding-left: 24px;
+	font-size: 16px;
+}
+#account h4{
+	background-image: url(../img/icon_user.png);
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+#withdraw h4{
+	background-image: url(../img/icon_money.png);
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+#rec_code h4{
+	background-image: url(../img/icon_extend.png);
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+.link_item i{
+	display: block;
+	float: right;	
+}
+.link_item a{
+	display: block;
+}
+.link_item img{
+	width: 16px;
+	height: 16px;
+}
+.item_content{
+	margin: 10px 10px;
+}
+.info{
+	width : 32rem;
+	padding: 1rem 0;
+	background-color: white;
+	border-bottom: 1px solid gainsboro;
+}
+.info ul li{
+	float: left;
+	border-right: 0.1rem solid #999;
+}
+.info ul li:last-child{
+	border: none;
+}
+.info ul li a{
+	font-size: 1.2rem;
+	display: inline-block;
+	width: 15.5rem;
+	height: 3rem;
+	text-align: center;
+	color:black;
+}
+

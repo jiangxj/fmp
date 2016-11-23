@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width, height=device-height , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 隐藏工具栏和菜单栏 -->
+		<meta name="format-detection" content="telephone=no">
+		<!--对电话号码的识别 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- QQ应用模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- 避免IE使用兼容模式 -->
+		<meta name="renderer" content="webkit">
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- windows phone 点击无高光 -->
+		<title>易搜财</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/detail.css" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/plugs/layer.m/layer.m.js"></script>
+		<script type="text/javascript" src="js/base.js"></script>
+		<script type="text/javascript" src="js/basefunc.js"></script>
+		<script type="text/javascript" src="js/request.js"></script>
+		<script type="text/javascript" src="js/detail.js"></script>
+		<script type="text/javascript" src="js/pageAdapter.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/wxbase.js?share=1"></script>
+	</head>
+
+	<body>
+		<div id="wrap" class="wrap">
+			<div class="detail">
+				<header>
+				<img class="backarrow" src="img/ic_brows_back.png" />
+				<span>详情</span>
+				</header>
+				<div class="ad_image_wrap">
+					<!--  <img src="img/ad_3.jpg" />-->
+				</div>
+				<div class="content">
+					<div class="rule">
+						<h3>
+							奖励规则
+						</h3>
+						<p id="rule01">
+					
+						</p>
+					</div>
+					<div class="rule">
+						<h3>
+							平台介绍
+						</h3>
+						<p id="rule00">
+							平台名称：<label id="platform"></label><br/>
+							资金托管：<label id="funds_trust"></label><br/>
+							担保机构：<label id="guarantee_agency"></label><br/>
+							安全等级：<label id="security_level"></label><br/>
+							注册资金:<label id="registered_capital"></label><br/>
+							地区：<label id="district"></label><br/>
+							上线时间：<label id="onlinedate"></label><br/>
+							ICP备案：<label id="icp_record"></label>
+						</p>
+					</div>
+					<div class="rule">
+						<h3>
+							温馨提示
+						</h3>
+						<p id="rule02">
+					
+						</p>
+					</div>
+					<div class="rule">
+						<h3>
+							体验攻略
+						</h3>
+						<p id="rule03">
+							<!--  
+						<li>
+							<h5>第一步：填写注册信息，并通过手机认证。</h5>
+							<p>
+								<img src="img/gl.jpg" />
+							</p>
+						</li>
+						<li>
+							<h5>第二步：成功完成以上认证后，返回本页面，提交11位手机号码。（备注：填写其他信息，无法获得U币奖励）</h4>
+						</li>
+						-->
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fast" class="fast">
+			<span id="go" class="button_wrap_input">立即参与</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var recalc = function() {
+			deviceAgent = navigator.userAgent.toLowerCase();
+			if (!deviceAgent.match(/(iphone|ipod|ipad|android|windows\s*phone|symbianos)/)) {
+				var fast = document.getElementById("fast");
+				var left = getAbsLeft(document.getElementById("wrap"));
+				fast.style.width= "512px";
+				fast.style.left = left+"px";
+			}
+		};
+		try{
+			window.addEventListener("resize", recalc, false);
+			document.addEventListener('DOMContentLoaded', recalc, false);
+		} catch (e) {}
+		
+	</script>
+</html>

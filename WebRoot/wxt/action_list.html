@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 隐藏工具栏和菜单栏 -->
+		<meta name="format-detection" content="telephone=no">
+		<!--对电话号码的识别 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- QQ应用模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- 避免IE使用兼容模式 -->
+		<meta name="renderer" content="webkit">
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- windows phone 点击无高光 -->
+		<title>易搜财</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/action_list.css" />
+		<link rel="stylesheet" href="js/plugs/swiper/css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script src="js/plugs/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/base.js"></script>
+		<script src="js/footer.js?index=1" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/pageAdapter.js"></script>
+		<script type="text/javascript" src="js/action_list.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/wxbase.js?share=0"></script>
+	</head>
+
+	<body>
+		<div id="wrap" class="wrap">
+			<div class="content">
+				<div>
+					<ul id="pagenavi" class="page">
+						<li><a href="#" class="active">未完成</a></li>
+						<li><a href="#">已完成</a></li>
+					</ul>
+				</div>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="task_list">
+								<ul>
+									<li>
+										<div class="task_item clearfix">
+											<div class="logo">
+												<img src="img/logo.jpg" />
+											</div>
+											<div class="item_right">
+												<div class="item_right_top">
+													<p>
+														注册就送，天上就有掉馅饼的事就看你敢不敢接啦，快来抢吧...
+														注册就送，天上就有掉馅饼的事就看你敢不敢接啦，快来抢吧...
+													</p>
+												</div>
+												<div class="item_right_bottom">
+													<p>任务状态：<strong>返点中</strong></p>
+													<p>更新时间：<strong>2015-11-12 17:20:35</strong></p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="task_item clearfix">
+											<div class="logo">
+												<img src="img/logo.jpg" />
+											</div>
+											<div class="item_right">
+												<div class="item_right_top">
+													<p>
+														注册就送，天上就有掉馅饼的事就看你敢不敢接啦，快来抢吧...
+													</p>
+												</div>
+												<div class="item_right_bottom">
+													<p>任务状态：<strong>返点中</strong></p>
+													<p>更新时间：<strong>2015-11-12 17:20:35</strong></p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="task_item clearfix">
+											<div class="logo">
+												<img src="img/logo.jpg" />
+											</div>
+											<div class="item_right">
+												<div class="item_right_top">
+													<p>
+														注册就送，天上就有掉馅饼的事就看你敢不敢接啦，快来抢吧...
+													</p>
+												</div>
+												<div class="item_right_bottom">
+													<p>任务状态：<strong>返点中</strong></p>
+													<p>更新时间：<strong>2015-11-12 17:20:35</strong></p>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="task_list">
+								<ul>
+									<li>
+										<div class="task_item clearfix">
+											<div class="logo">
+												<img src="img/logo.jpg" />
+											</div>
+											<div class="item_right">
+												<div class="item_right_top">
+													<p>
+														注册就送，天上就有掉馅饼的事就看你敢不敢接啦，快来抢吧...
+													</p>
+												</div>
+												<div class="item_right_bottom">
+													<p>任务状态：<strong>返点中</strong></p>
+													<p>更新时间：<strong>2015-11-12 17:20:35</strong></p>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			onInit: function(swiper) {
+				swiper.container[0].style.height = $(swiper.slides[swiper.activeIndex]).find(".task_list").outerHeight(true) + 'px';
+			},
+			onSlideChangeEnd: function(swiper) {
+				swiper.container[0].style.height = $(swiper.slides[swiper.activeIndex]).find(".task_list").outerHeight(true) + 'px';
+				sliderBlock(swiper.activeIndex);
+			}
+		});
+		$("#pagenavi").find("a").click(function() {
+			var currIndex = $("#pagenavi").find("a").index($(this));
+			mySwiper.slideTo(currIndex)
+			sliderBlock(currIndex);
+		});
+		var sliderBlock = function(index) {
+			$("#pagenavi").find("a").each(function(tempIndex) {
+				if (tempIndex == index) {
+					if (!$("#pagenavi").find("a").eq(tempIndex).hasClass("active")) {
+						$("#pagenavi").find("a").eq(tempIndex).addClass("active");
+					}
+				} else {
+					if ($("#pagenavi").find("a").eq(tempIndex).hasClass("active")) {
+						$("#pagenavi").find("a").eq(tempIndex).removeClass("active");
+					}
+				}
+			});
+		}
+	</script>
+
+</html>

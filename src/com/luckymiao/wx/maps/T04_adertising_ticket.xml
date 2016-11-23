@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T04_adertising_ticket">
+   
+   <select id="getT04_adertising_ticketListByAd_id" parameterType="com.luckymiao.wx.dto.T04_adertising_ticket" resultType="com.luckymiao.wx.dto.T04_adertising_ticket">
+   		select * from t04_adertising_ticket where ad_id = #{ad_id}
+   </select>
+   <select id="modifyT04_adertising_ticketFlagByTid" parameterType="com.luckymiao.wx.dto.T04_adertising_ticket" >
+   		update t04_adertising_ticket set flag = '0' where tid = #{tid} and flag = '1'
+   </select>
+   <insert id="insertT04_user_ticket" parameterType="com.luckymiao.wx.dto.T04_user_ticket">
+   		insert into t04_user_ticket(hid, uid, tid, createdate) values (#{hid}, #{uid}, #{tid}, #{createdate})
+   </insert>
+    <select id="getT04_user_ticketByUid" parameterType="com.luckymiao.wx.dto.T04_user_ticket" resultType="com.luckymiao.wx.dto.T04_user_ticket">
+   		select * from t04_user_ticket where uid = #{uid}
+   </select>
+   
+</mapper>

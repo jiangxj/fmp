@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="Wx_access_token">
+	<select id="getWX_jsapi_ticketByAppid"  parameterType="com.luckymiao.wx.dto.Wx_access_token" resultType="com.luckymiao.wx.dto.Wx_access_token">
+		select * from wx_access_token where appid = #{appid}
+   </select>
+   
+</mapper>

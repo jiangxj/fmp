@@ -1,0 +1,15 @@
+.agree{
+	width: 28rem;
+	margin: 2rem 2rem;
+}
+.agree h5{
+	dislay: block;
+	text-align: center;
+	magin: 2rem 0;
+	font-size: 1.8rem;
+}
+.agree pre{
+	font-size: 1.6rem;
+	color: gray;
+	line-height: 2.8rem;
+}

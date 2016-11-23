@@ -1,0 +1,72 @@
+@charset "utf-8";
+.wrap{
+	margin: 0 10px;
+}
+.adPicBox{
+	margin-bottom: 5px;
+}
+.adPic{
+	width: 100%;
+}
+.adTitle{
+	margin-top: 5px;
+}
+.adTitle .title{
+	float: left;
+	color: #FF4070;
+	font-size: 18px;
+	white-space:nowrap;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	padding: 10px 0;
+}
+.adTitle .btn{
+	float: right;
+	color: white;
+	font-size: 14px;
+	border-radius: 4px;
+	background: #FF4070;
+	padding: 10px 14px;
+}
+.adCond{
+	margin-top: 5px;
+	color: darkgray;
+	font-size: 14px;
+}
+.adContentBox{
+	color: dimgrey;
+	margin-top: 10px;
+	margin-bottom: 30%;
+	font-size: 16px;
+}
+
+.adContent{
+	text-indent: 2em;
+}
+.adUserWay{
+	margin-top: 20px;
+}
+.hr10{
+	width: auto;
+	height: 10px;
+	margin: 5px 0;
+	background-color: gainsboro;
+}
+.hr1{
+	width: auto;
+	height: 1px;
+	margin: 5px 0;
+	background-color: gainsboro;
+}
+.download{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 10%;
+	background-color: deepskyblue;
+	z-index: 2;
+	text-align: center;
+	color: white;
+}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T03_user_account">
+   
+   <insert id="insertT03_user_account" parameterType="com.luckymiao.wx.dto.T03_user_account">
+   		insert into t03_user_account(aid,uid,balance,freeze,flag,createdate) values(#{aid},#{uid},#{balance},#{freeze},#{flag},#{createdate})
+   </insert>
+   
+   <update id="modifyT03_user_accountFreezeByAid" parameterType="com.luckymiao.wx.dto.T03_user_account">
+   		update t03_user_account set freeze = #{freeze} where aid = #{aid}
+   </update>
+   
+   <update id="modifyT03_user_accountAddFreezeByAid" parameterType="com.luckymiao.wx.dto.T03_user_account">
+   		update t03_user_account set freeze = freeze + ${freeze} where aid = #{aid}
+   </update>
+   
+   <update id="modifyT03_user_accountBalanceForAddByUid" parameterType="com.luckymiao.wx.dto.T03_user_account">
+   		update t03_user_account set balance = balance + ${balance} where uid = #{uid}
+   </update>
+   
+   <insert id="insertT03_user_account_log" parameterType="com.luckymiao.wx.dto.T03_user_account_log">
+   		insert into t03_user_account_log(lid,aid,coin,balance,createdate,type,businesstype) values(#{lid},#{aid},#{coin},#{balance},#{createdate},#{type},#{businesstype})
+   </insert>
+   
+   <select id="getT03_user_accountByUid" parameterType="com.luckymiao.wx.dto.T03_user_account" resultType="com.luckymiao.wx.dto.T03_user_account">
+   		select * from t03_user_account where uid = #{uid}
+   </select>
+   
+</mapper>

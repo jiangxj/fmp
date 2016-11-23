@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, height=device-height , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 隐藏工具栏和菜单栏 -->
+		<meta name="format-detection" content="telephone=no">
+		<!--对电话号码的识别 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- QQ应用模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- 避免IE使用兼容模式 -->
+		<meta name="renderer" content="webkit">
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- windows phone 点击无高光 -->
+		<title>易搜财</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/regist.css" />
+		<link rel="stylesheet" href="js/plugs/layer.m/need/layer.css" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/plugs/layer.m/layer.m.js" ></script>
+		<script type="text/javascript" src="js/base.js" ></script>
+		<script type="text/javascript" src="js/regist.js" ></script>
+		<script type="text/javascript" src="js/pageAdapter.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/wxbase.js?share=0"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<header>
+				<img class="backarrow" src="img/ic_brows_back.png" /><span>新用户注册</span>
+			</header>
+			<div class="data">
+				<div class="input">
+					<input type="tel" id="telephone" placeholder="请输入手机号" class="text_input" />
+				</div>
+				<div class="input">
+					<input type="tel" id="checkcode" readonly="readonly" placeholder="请输入验证码" class="code_input" /><span id="codebtn" class="button_code">获取验证码</span>
+				</div>
+				<div class="input">
+					<input type="password" id="password" placeholder="请输入密码" class="text_input" />
+				</div>
+				<div class="input">
+					<input type="password" id="new_password" placeholder="请再次输入密码" class="text_input" />
+				</div>
+				<div class="input">
+					<input type="tel" id="code" placeholder="请输入邀请码" class="text_input" />
+				</div>
+				<div>
+					<h6><input type="checkbox" id="agree" name="agree" value="1" checked="checked" />&nbsp;&nbsp;<a href="agree.html">我已经阅读并同意一下内容</a></h6>
+				</div>
+				<div>
+					<div id="regist_btn" class="button_input">立即注册</div>
+					<h6>易搜财将严格对用户的所有资料进行保密</h6>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

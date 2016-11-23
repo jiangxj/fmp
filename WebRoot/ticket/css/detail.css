@@ -1,0 +1,38 @@
+.ad_image_wrap img{
+	width: 32rem;
+	height: 12rem;	
+}
+.fast{
+	position: fixed;
+	bottom: 0;
+	width: 32rem;
+	height: 5rem;
+	background-color: white;
+	text-align: right;
+	border-top: 0.1rem solid gainsboro;
+}
+.rule{
+	background-color: white;
+	padding: 1rem 1rem;
+}
+.content .rule:first-child{
+	margin-top: 0;
+}
+.rule h3{
+	color: #FF4070;
+	font-size: 1rem;
+	margin: 1rem 0;
+	border-bottom: 0.1rem solid #FF4070;
+}
+.rule pre{
+	color: #999;
+	font-size: 1rem;
+	line-height: 2rem;
+}
+.rule ul li h5{
+	font-size: 0.8rem;
+}
+.rule ul li img{
+	width: 30rem;
+	margin: 4rem 0;
+}

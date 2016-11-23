@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>  
+	<mappers>
+		<mapper resource="com/luckymiao/common/maps/Common.xml" />
+		<mapper resource="com/luckymiao/common/maps/T01_common_interface.xml" />
+		
+		<mapper resource="com/luckymiao/wx/maps/T03_project.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T03_user.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T03_user_platform.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T03_user_account.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T03_user_withdraw.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T03_suggest.xml" />
+		<mapper resource="com/luckymiao/wx/maps/Wx_access_token.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T03_share.xml" />
+		<mapper resource="com/luckymiao/log/maps/T03_access.xml" />
+		<mapper resource="com/luckymiao/wx/maps/T04_adertising_ticket.xml" />
+		
+	</mappers>
+	
+</configuration>  

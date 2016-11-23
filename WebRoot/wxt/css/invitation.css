@@ -1,0 +1,28 @@
+.container{
+	position: relative;
+}
+#bgi{
+	width: 100%;
+	height:100%;
+}
+.container h1{
+	position: absolute;
+	z-index: 10;
+	left: 38%;
+	top: 27%;
+	padding: 10px;
+}
+#go{
+	position: absolute;
+	z-index: 10;
+	left: 32%;
+	top: 32%;
+	cursor : pointer;
+}
+#qrcode{
+	position: absolute;
+	z-index: 10;
+	left: 20%;
+	bottom: 10%;
+	width: 50%;
+}

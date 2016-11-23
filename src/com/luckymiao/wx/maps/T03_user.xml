@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T03_user">
+	<select id="getT03_userByTelephone"  parameterType="com.luckymiao.wx.dto.T03_user" resultType="com.luckymiao.wx.dto.T03_user">
+		select * from t03_user where telephone = #{telephone}
+   </select>
+   
+   <insert id="insertT03_user" parameterType="com.luckymiao.wx.dto.T03_user">
+   		insert into t03_user(uid,telephone,password,alipay_account,recommend_code,flag,createdate,code) values(#{uid},#{telephone},#{password},#{alipay_account},#{recommend_code},#{flag},#{createdate},#{code})
+   </insert>
+   
+   <select id="getT03_userByTelephoneAndPassword"  parameterType="com.luckymiao.wx.dto.T03_user" resultType="com.luckymiao.wx.dto.T03_user">
+		select * from t03_user where telephone = #{telephone} and password = #{password}
+   </select>
+   
+   <update id="modifyT03_userAlipay_accountByTelephone" parameterType="com.luckymiao.wx.dto.T03_user">
+   		update t03_user set alipay_account = #{alipay_account} where telephone = #{telephone}
+   </update>
+   
+   <update id="modifyT03_userTelephoneByTelephone" parameterType="com.luckymiao.wx.dto.T03_user">
+   		update t03_user set telephone = #{new_telephone} where telephone = #{telephone}
+   </update>
+   
+   <select id="getT03_user_accountByTelephone"  parameterType="com.luckymiao.wx.dto.T03_user_account" resultType="com.luckymiao.wx.dto.T03_user_account">
+		select * from t03_user_account t1,t03_user t2 where t1.uid = t2.uid and t2.telephone = #{telephone}
+   </select>
+   
+   <select id="getT03_user_account_logByAidShortDate"  parameterType="com.luckymiao.wx.dto.T03_user_account_log" resultType="com.luckymiao.wx.dto.T03_user_account_log">
+		select * from t03_user_account_log where left(createdate,10) = #{createdate} and aid = #{aid}
+   </select>
+   
+   <select id="getT03_user_projectByTelephone"  parameterType="com.luckymiao.wx.dto.T03_user_project" resultType="com.luckymiao.wx.dto.T03_user_project">
+		select t1.tid, t4.telephone, t1.status,t3.discname statusmsg, t1.createdate, t1.modifydate,t2.p_title,t2.p_image,t2.income from t03_user_project t1, t03_project t2,t00_dict t3, t03_user t4 where t1.pid = t2.p_id and t1.status = t3.disckey and t1.uid = t4.uid and t4.telephone = #{telephone} and t3.disctype = 'T0001'
+   </select>
+   
+   <update id="modifyT03_user_accountBalanceByUid" parameterType="com.luckymiao.wx.dto.T03_user_account">
+   		update t03_user_account set balance = #{balance} where uid = #{uid}
+   </update>
+   
+   <update id="modifyT03_userPasswordByTelephone" parameterType="com.luckymiao.wx.dto.T03_user">
+   		update t03_user set password = #{password} where telephone = #{telephone}
+   </update>
+   <select id="getT03_userListByCodeForInvitation"  parameterType="com.luckymiao.wx.dto.T03_user" resultType="com.luckymiao.wx.dto.T03_user">
+		select t2.telephone,t2.createdate from t03_user t1,t03_user t2 where t1.recommend_code = t2.code and t1.telephone = #{telephone}
+   </select>
+   
+   <select id="getT03_userByRecommend_code"  parameterType="com.luckymiao.wx.dto.T03_user" resultType="com.luckymiao.wx.dto.T03_user">
+		select * from t03_user where recommend_code = #{recommend_code}
+   </select>
+   
+</mapper>

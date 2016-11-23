@@ -1,0 +1,68 @@
+.task_list{
+	width: 32rem;
+	height: 9rem
+	position: absolute;
+	z-index: 1;
+	top: 2rem;
+	padding-top: 4.5rem;
+	padding-bottom: 4.5rem;
+}
+.task_list ul li{
+	color: gray;
+	margin: 1rem 0;
+	padding: 1rem 1rem;
+	background-color: white;
+	border-top: 0.1rem gainsboro dashed;
+	border-bottom: 0.1rem gainsboro dashed;
+}
+.logo{
+	width: 9rem;
+	height: 9rem;
+	float: left;
+	margin-right: 1rem;
+}
+.logo img{
+	width: 9rem;
+	height: 9rem;
+}
+.item_right{
+	position: relative;
+	width: 20rem;
+	height: 9rem;
+	float: left;	
+}
+.item_right_top{
+	width: 20rem;
+	height: 4.2rem;
+	overflow: hidden;
+}
+.item_right_top p{
+	font-size: 1.4rem;
+	line-height:1.4rem;
+}
+.item_right_bottom{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.item_right_bottom p{
+	font-size: 1.4rem;
+	text-align: right;
+}
+.task_list strong{
+	color: #FF4070;
+}
+.empty{
+	width: 29rem;
+	height : 100%;
+	text-align: center;
+	font-size: 1rem;
+	color: gray;
+}
+
+/*page*/
+.page{text-align:left; background:#f3f3f3; height:4rem; line-height:4rem; width:32rem;display:-webkit-box; position: fixed; z-index: 10;}
+.page li{-webkit-box-flex:1; font-size:1.6rem; display:block; height:4rem; line-height:4rem; text-align:center; }
+.page li a{ color:#999; display:block; height:4rem;}
+.page a.active{color:#FF4070;border-bottom:0.1rem solid #FF4070;}
+

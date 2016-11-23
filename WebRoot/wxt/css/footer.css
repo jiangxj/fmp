@@ -1,0 +1,29 @@
+.footer{
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	width: 32rem;
+	background-color: #fff;
+	text-align: center;
+	color: white;
+}
+.footer ul{
+	padding-top: 0.5rem;
+	margin-left: 2%;
+}
+.footer ul li{
+	float: left;
+	width: 33%;
+	padding: 0.5rem 0;
+}
+.footer ul li a{
+	font-size: 14px;
+}
+.footer ul li img{
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.line_gray{
+	background-color: #999;
+	height: 0.05rem;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="T03_project">
+	<select id="getT01_projectByP_id"  parameterType="com.luckymiao.wx.dto.T03_project" resultType="com.luckymiao.wx.dto.T03_project">
+		select t1.*,t2.platform,t2.funds_trust,t2.guarantee_agency,t2.security_level,t2.url,t2.registered_capital,t2.district,t2.onlinedate,t2.icp_record,t2.login_url,t2.regist_url from t03_project t1,t03_platform t2 where t1.p_platform_id = t2.pid and p_id = #{p_id}
+   </select>
+   
+   <select id="getT03_project_guideByP_id"  parameterType="com.luckymiao.wx.dto.T03_project" resultType="com.luckymiao.wx.dto.T03_project_guide">
+		select * from t03_project_guide where p_id = #{p_id}
+   </select>
+   
+   <insert id="insertT03_user_project"  parameterType="com.luckymiao.wx.dto.T03_user_project">
+		insert into t03_user_project(tid,uid,pid,status,createdate,modifydate) values(#{tid},#{uid},#{pid},#{status},#{createdate},#{modifydate})
+   </insert>
+   
+   <select id="getT03_user_projectByPidAndTelephone"  parameterType="com.luckymiao.wx.dto.T03_user_project" resultType="com.luckymiao.wx.dto.T03_user_project">
+		select t1.*,t2.uid,t3.p_platform_id from t03_user_project t1,t03_user t2, t03_project t3 where t1.pid = t3.p_id and t1.uid = t2.uid and t1.pid = #{pid} and t2.telephone = #{telephone}
+   </select>
+   
+   <insert id="insertT03_project_access"  parameterType="com.luckymiao.wx.dto.T03_project_access">
+		insert into t03_project_access(cid,uid,pid,createdate) values(#{cid},#{uid},#{pid},#{createdate})
+   </insert>
+   
+   <update id="modifyT03_projectP_click_acount"  parameterType="com.luckymiao.wx.dto.T03_project">
+		update t03_project set p_click_amount = #{p_click_amount} where p_id = #{p_id}
+   </update>
+   
+   <select id="getT03_user_platformByPlatformidAndTelephone"  parameterType="com.luckymiao.wx.dto.T03_user_platform" resultType="com.luckymiao.wx.dto.T03_user_platform">
+		select * from t03_user_platform where platformid = #{platformid} and telephone = #{telephone}
+   </select>
+   
+</mapper>

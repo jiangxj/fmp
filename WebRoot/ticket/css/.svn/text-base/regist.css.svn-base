@@ -1,0 +1,7 @@
+body{
+	background-color: gainsboro;
+}
+.regist_container{
+	margin-left: 10px;
+	margin-right: 10px;
+}

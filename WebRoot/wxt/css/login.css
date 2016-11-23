@@ -1,0 +1,22 @@
+.login_container{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.tips{
+	margin: 20px 0;
+	font-size: 1.4rem;
+}
+.reglink{
+	float: left;
+}
+.passlink{
+	float: right;
+}
+.reglink a{
+	color: #FF4070;
+	text-decoration: underline;
+}
+.passlink a{
+	color: #FF4070;
+	text-decoration: underline;
+}

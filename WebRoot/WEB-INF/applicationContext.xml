@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    http://www.springframework.org/schema/aop 
+   	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+
+		<property name="url"
+			value="jdbc:mysql://139.196.6.63:3306/fmp?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="mengkefmp"></property>
+		<property name="maxActive" value="20"></property>
+		<property name="initialSize" value="10"></property>
+		<property name="minIdle" value="2"></property>
+		<property name="maxIdle" value="5000"></property>
+		<property name="validationQuery" value="select count(*) from dual"></property>
+		<property name="testOnBorrow" value="true"></property>
+		<property name="testOnReturn" value="true"></property>
+		<property name="testWhileIdle" value="true"></property>
+		<property name="minEvictableIdleTimeMillis" value="120000"></property>
+		<property name="timeBetweenEvictionRunsMillis" value="18000000"></property>
+		
+	</bean>
+
+	<!-- 配置文件加载 -->
+	<bean id="sysConfig" class="com.luckymiao.common.properties.XMLProperties">
+		<constructor-arg>
+			<value>/WEB-INF/system-config.xml</value>
+		</constructor-arg>
+	</bean>
+	<!-- 分页拦截器  -->
+	<bean id="pageInterceptor" class="com.luckymiao.common.mybatis.plugin.PageInterceptor">
+	</bean> 
+	<!-- 创建SqlSessionFactory同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"></property>
+		<property name="plugins">  
+            <ref bean="pageInterceptor"/>  
+        </property>
+	</bean>
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	<!-- JCS 缓存接口注入 -->
+	<bean id="cm" class="com.luckymiao.common.jcs.CatchManager">
+		<constructor-arg index="0" ref="dataSource" />
+		<constructor-arg index="1" ref="sysConfig" />
+	</bean>
+	
+	<bean id="cacheMap" class="com.luckymiao.common.cache.CacheMap">
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 自动扫描dao和service包(自动注入) -->
+	<context:annotation-config />
+	<context:component-scan base-package="com.luckymiao*">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>  
+	</context:component-scan>
+	
+	<!-- 启动spring事务注解-->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	 
+	 <!--
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="insert*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* com.luckymiao.zcmc.service.impl.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
+    </aop:config>
+    -->
+</beans>
